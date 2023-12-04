@@ -5,6 +5,7 @@
     font-size: inherit;
     font-weight: inherit;
     font-family: inherit;
+    font-style: inherit;
     text-decoration: inherit;
     line-height: inherit;
     color: inherit;
@@ -54,6 +55,22 @@ section{
     padding: 50px 0;
     max-width: 800px;
     margin: 0 auto;
+}
+section:target h1{
+    animation: flash 2s;
+}
+@keyframes flash{
+    from{
+        text-shadow: 10px 10px 0px red,
+                     -10px -10px 0px blue;
+    }
+    to{
+        text-shadow: 0px 0px 0px red;
+    }
+}
+address{
+    white-space: pre-line;
+    margin-bottom: 20px;
 }
 
 .hero{
@@ -130,9 +147,30 @@ border-right: 0;
     max-width: 500px;
     margin: 0 auto;
 }
-.prose p{
+.prose p,
+.prose ul{
     margin: 20px auto;
 }
 .prose li{
     list-style-position: inside;
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    position: fixed;
+}
+.nav li{
+    list-style-type: none;
+    flex-grow: 1;
+}
+.nav li a{
+    display: block;
+    line-height: 50px;
+    background-color: grey ;
+    text-shadow: #369;
+    transition: background-color 0.2;
+}
+.nav li a:hover{
+    background-color: blue;
 }
